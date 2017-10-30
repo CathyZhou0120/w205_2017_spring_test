@@ -24,9 +24,9 @@ unzip medicare_data.zip
 OLD_FILE="Hospital General Information.csv"
 NEW_FILE="hospitals.csv"
 
-tail -n +2 "$OLD_FILE" >"$NEW_FILE"
+tail -n +2 "$OLD_FILE" >$NEW_FILE
 
-OLD_FILE="Timely and Effective Care - Hospital.csv"
+LD_FILE="Timely and Effective Care - Hospital.csv"
 NEW_FILE="effective_care.csv"
 
 tail -n +2 "$OLD_FILE" >"$NEW_FILE"
@@ -57,8 +57,8 @@ hdfs dfs -put surveys_responses.csv /user/w205/hospital_compare
 hdfs dfs -put effective_care.csv /user/w205/hospital_compare
 hdfs dfs -put readmissions.csv /user/w205/hospital_compare
 
+
 # change directory back to original
 
 cd $MY_CWD
 
-exit
